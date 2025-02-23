@@ -1,0 +1,1 @@
+const express = require('express');const router = express.Router();const Movie = require('../models/Movie');router.get('/', async (req, res) => { try { const movies = await Movie.find(); res.send(movies); } catch (error) { res.status(500).send(error); }});module.exports = router;
